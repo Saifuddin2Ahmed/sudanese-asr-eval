@@ -1,0 +1,23 @@
+{
+  "name": "ft_whisper_small",
+  "base_model": "openai/whisper-small",
+  "mode": "full",
+  "seed": 42,
+  "bootstrap": 1000,
+  "lr": 1e-5,
+  "weight_decay": 0.0,
+  "warmup_steps": 300,
+  "max_steps": 4000,
+  "batch_size": 8,
+  "grad_accum": 2,
+  "eval_every": 250,
+  "patience": 4,
+  "eval_batch_size": 32,
+  "fp16": true,
+  "gradient_checkpointing": false,
+  "spec_augment": false,
+  "save_model": true,
+  "split_tsv": "/kaggle/working/splits/sdn_split_v1.tsv",
+  "cache_dir": "/tmp/cache",
+  "out_dir": "/kaggle/working/outputs"
+}

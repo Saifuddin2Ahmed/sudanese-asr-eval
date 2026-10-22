@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sudanese-asr-eval"
+version = "1.0.0"
+description = "Text normalisation (raw / basic / full) and bootstrap WER/CER scoring for Sudanese Arabic ASR"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [{ name = "Saifuddin Ahmed" }]
+keywords = ["speech recognition", "ASR", "Arabic", "Sudanese Arabic", "Whisper", "WER", "normalisation", "evaluation"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Natural Language :: Arabic",
+]
+dependencies = ["numpy>=1.21", "jiwer>=3.1"]
+
+[project.optional-dependencies]
+experiments = [
+  "transformers==4.56.2", "peft==0.17.1", "jiwer==3.1.0", "torch", "soundfile", "librosa", "pyarrow", "huggingface_hub",
+]
+
+[project.scripts]
+sudanese-asr-eval = "sudanese_asr_eval.cli:main"
+
+[project.urls]
+Repository = "https://github.com/birtal-lab/sudanese-asr-eval"
+
+[tool.setuptools.packages.find]
+where = ["src"]

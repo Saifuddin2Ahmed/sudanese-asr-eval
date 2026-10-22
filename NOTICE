@@ -1,0 +1,7 @@
+sudanese-asr-eval
+Copyright 2026 Saifuddin Ahmed
+
+This product includes software developed by Saifuddin Ahmed.
+The Whisper basic text normaliser in src/sudanese_asr_eval/textnorm.py is a
+re-implementation of the behaviour of BasicTextNormalizer in Hugging Face
+Transformers (Apache-2.0), which follows OpenAI Whisper (MIT).

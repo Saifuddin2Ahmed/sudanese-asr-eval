@@ -1,0 +1,18 @@
+{
+  "name": "zeroshot",
+  "seed": 42,
+  "bootstrap": 1000,
+  "batch_size": 16,
+  "split_tsv": "/kaggle/working/splits/sdn_split_v1.tsv",
+  "cache_dir": "/tmp/cache",
+  "out_dir": "/kaggle/working/outputs",
+  "models": [
+    {"id": "openai/whisper-small"},
+    {"id": "openai/whisper-medium"},
+    {"id": "openai/whisper-large-v2", "batch_size": 8},
+    {"id": "openai/whisper-large-v2", "name": "openai/whisper-large-v2@auto-lang", "language": null, "sets": ["ookeval"], "batch_size": 8},
+    {"id": "openai/whisper-large-v3", "batch_size": 8},
+    {"id": "openai/whisper-large-v3-turbo"},
+    {"id": "AymanMansour/Whisper-Sudanese-Dialect-small", "name": "AymanMansour/Whisper-Sudanese-Dialect-small (2022, external ref)", "gen_config_from": "openai/whisper-small", "sets": ["ookeval"]}
+  ]
+}

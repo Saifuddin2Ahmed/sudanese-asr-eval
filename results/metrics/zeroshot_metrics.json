@@ -1,0 +1,530 @@
+{
+ "env": {
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "transformers": "4.56.2",
+  "cuda": "12.8",
+  "gpu": "Tesla T4",
+  "peft": "0.17.1",
+  "jiwer": "?"
+ },
+ "config": {
+  "name": "zeroshot",
+  "seed": 42,
+  "bootstrap": 1000,
+  "batch_size": 16,
+  "split_tsv": "/kaggle/working/splits/sdn_split_v1.tsv",
+  "cache_dir": "/tmp/cache",
+  "out_dir": "/kaggle/working/outputs",
+  "models": [
+   {
+    "id": "openai/whisper-small"
+   },
+   {
+    "id": "openai/whisper-medium"
+   },
+   {
+    "id": "openai/whisper-large-v2",
+    "batch_size": 8
+   },
+   {
+    "id": "openai/whisper-large-v2",
+    "name": "openai/whisper-large-v2@auto-lang",
+    "language": null,
+    "sets": [
+     "ookeval"
+    ],
+    "batch_size": 8
+   },
+   {
+    "id": "openai/whisper-large-v3",
+    "batch_size": 8
+   },
+   {
+    "id": "openai/whisper-large-v3-turbo"
+   },
+   {
+    "id": "AymanMansour/Whisper-Sudanese-Dialect-small",
+    "name": "AymanMansour/Whisper-Sudanese-Dialect-small (2022, external ref)",
+    "gen_config_from": "openai/whisper-small",
+    "sets": [
+     "ookeval"
+    ]
+   }
+  ]
+ },
+ "runs": {
+  "openai/whisper-small": {
+   "model": "openai/whisper-small",
+   "language": "ar",
+   "sdn_test": {
+    "n_utts": 369,
+    "wer_raw": 136.36,
+    "wer_raw_ci95": [
+     115.33,
+     158.7
+    ],
+    "cer_raw": 88.88,
+    "cer_raw_ci95": [
+     70.23,
+     106.85
+    ],
+    "n_scored_raw": 369,
+    "wer_basic": 135.72,
+    "wer_basic_ci95": [
+     114.64,
+     157.92
+    ],
+    "cer_basic": 87.84,
+    "cer_basic_ci95": [
+     69.4,
+     105.79
+    ],
+    "n_scored_basic": 369,
+    "wer_norm": 136.58,
+    "wer_norm_ci95": [
+     113.39,
+     161.15
+    ],
+    "cer_norm": 86.46,
+    "cer_norm_ci95": [
+     67.69,
+     104.7
+    ],
+    "n_scored_norm": 369,
+    "seconds": 71.0
+   },
+   "ookeval": {
+    "n_utts": 797,
+    "wer_raw": 90.07,
+    "wer_raw_ci95": [
+     83.78,
+     97.28
+    ],
+    "cer_raw": 54.02,
+    "cer_raw_ci95": [
+     48.82,
+     59.46
+    ],
+    "n_scored_raw": 797,
+    "wer_basic": 89.63,
+    "wer_basic_ci95": [
+     83.35,
+     96.77
+    ],
+    "cer_basic": 52.86,
+    "cer_basic_ci95": [
+     47.95,
+     58.18
+    ],
+    "n_scored_basic": 797,
+    "wer_norm": 85.2,
+    "wer_norm_ci95": [
+     78.95,
+     92.53
+    ],
+    "cer_norm": 51.2,
+    "cer_norm_ci95": [
+     46.26,
+     56.5
+    ],
+    "n_scored_norm": 797,
+    "seconds": 136.6
+   }
+  },
+  "openai/whisper-medium": {
+   "model": "openai/whisper-medium",
+   "language": "ar",
+   "sdn_test": {
+    "n_utts": 369,
+    "wer_raw": 98.28,
+    "wer_raw_ci95": [
+     83.44,
+     118.75
+    ],
+    "cer_raw": 73.41,
+    "cer_raw_ci95": [
+     57.3,
+     91.11
+    ],
+    "n_scored_raw": 369,
+    "wer_basic": 98.42,
+    "wer_basic_ci95": [
+     83.27,
+     119.24
+    ],
+    "cer_basic": 71.85,
+    "cer_basic_ci95": [
+     55.94,
+     89.53
+    ],
+    "n_scored_basic": 369,
+    "wer_norm": 93.16,
+    "wer_norm_ci95": [
+     76.79,
+     116.01
+    ],
+    "cer_norm": 69.76,
+    "cer_norm_ci95": [
+     53.68,
+     87.65
+    ],
+    "n_scored_norm": 369,
+    "seconds": 151.1
+   },
+   "ookeval": {
+    "n_utts": 797,
+    "wer_raw": 72.39,
+    "wer_raw_ci95": [
+     67.56,
+     77.72
+    ],
+    "cer_raw": 39.25,
+    "cer_raw_ci95": [
+     35.42,
+     43.62
+    ],
+    "n_scored_raw": 797,
+    "wer_basic": 71.56,
+    "wer_basic_ci95": [
+     66.74,
+     76.89
+    ],
+    "cer_basic": 38.81,
+    "cer_basic_ci95": [
+     35.05,
+     43.14
+    ],
+    "n_scored_basic": 797,
+    "wer_norm": 66.3,
+    "wer_norm_ci95": [
+     61.23,
+     71.65
+    ],
+    "cer_norm": 36.98,
+    "cer_norm_ci95": [
+     33.18,
+     41.37
+    ],
+    "n_scored_norm": 797,
+    "seconds": 249.4
+   }
+  },
+  "openai/whisper-large-v2": {
+   "model": "openai/whisper-large-v2",
+   "language": "ar",
+   "sdn_test": {
+    "n_utts": 369,
+    "wer_raw": 75.98,
+    "wer_raw_ci95": [
+     69.62,
+     83.63
+    ],
+    "cer_raw": 42.46,
+    "cer_raw_ci95": [
+     35.74,
+     50.92
+    ],
+    "n_scored_raw": 369,
+    "wer_basic": 75.34,
+    "wer_basic_ci95": [
+     68.96,
+     83.0
+    ],
+    "cer_basic": 42.05,
+    "cer_basic_ci95": [
+     35.28,
+     50.48
+    ],
+    "n_scored_basic": 369,
+    "wer_norm": 67.69,
+    "wer_norm_ci95": [
+     60.48,
+     76.38
+    ],
+    "cer_norm": 39.6,
+    "cer_norm_ci95": [
+     32.8,
+     48.18
+    ],
+    "n_scored_norm": 369,
+    "seconds": 147.1
+   },
+   "ookeval": {
+    "n_utts": 797,
+    "wer_raw": 69.45,
+    "wer_raw_ci95": [
+     65.39,
+     74.23
+    ],
+    "cer_raw": 38.76,
+    "cer_raw_ci95": [
+     35.32,
+     42.46
+    ],
+    "n_scored_raw": 797,
+    "wer_basic": 68.47,
+    "wer_basic_ci95": [
+     64.43,
+     73.23
+    ],
+    "cer_basic": 38.12,
+    "cer_basic_ci95": [
+     34.7,
+     41.82
+    ],
+    "n_scored_basic": 797,
+    "wer_norm": 62.5,
+    "wer_norm_ci95": [
+     58.21,
+     67.5
+    ],
+    "cer_norm": 36.27,
+    "cer_norm_ci95": [
+     32.88,
+     40.01
+    ],
+    "n_scored_norm": 797,
+    "seconds": 422.4
+   }
+  },
+  "openai/whisper-large-v2@auto-lang": {
+   "model": "openai/whisper-large-v2",
+   "language": null,
+   "ookeval": {
+    "n_utts": 797,
+    "wer_raw": 70.32,
+    "wer_raw_ci95": [
+     66.04,
+     75.38
+    ],
+    "cer_raw": 39.45,
+    "cer_raw_ci95": [
+     35.99,
+     43.19
+    ],
+    "n_scored_raw": 797,
+    "wer_basic": 69.6,
+    "wer_basic_ci95": [
+     65.32,
+     74.85
+    ],
+    "cer_basic": 38.71,
+    "cer_basic_ci95": [
+     35.33,
+     42.3
+    ],
+    "n_scored_basic": 797,
+    "wer_norm": 63.43,
+    "wer_norm_ci95": [
+     59.07,
+     68.66
+    ],
+    "cer_norm": 36.94,
+    "cer_norm_ci95": [
+     33.5,
+     40.5
+    ],
+    "n_scored_norm": 797,
+    "seconds": 583.3
+   }
+  },
+  "openai/whisper-large-v3": {
+   "model": "openai/whisper-large-v3",
+   "language": "ar",
+   "sdn_test": {
+    "n_utts": 369,
+    "wer_raw": 83.04,
+    "wer_raw_ci95": [
+     70.43,
+     102.51
+    ],
+    "cer_raw": 47.12,
+    "cer_raw_ci95": [
+     37.04,
+     61.85
+    ],
+    "n_scored_raw": 369,
+    "wer_basic": 85.19,
+    "wer_basic_ci95": [
+     72.01,
+     105.61
+    ],
+    "cer_basic": 45.36,
+    "cer_basic_ci95": [
+     35.86,
+     59.64
+    ],
+    "n_scored_basic": 369,
+    "wer_norm": 76.54,
+    "wer_norm_ci95": [
+     62.56,
+     97.81
+    ],
+    "cer_norm": 42.8,
+    "cer_norm_ci95": [
+     33.13,
+     57.43
+    ],
+    "n_scored_norm": 369,
+    "seconds": 166.3
+   },
+   "ookeval": {
+    "n_utts": 797,
+    "wer_raw": 66.39,
+    "wer_raw_ci95": [
+     60.84,
+     72.96
+    ],
+    "cer_raw": 33.64,
+    "cer_raw_ci95": [
+     30.06,
+     37.97
+    ],
+    "n_scored_raw": 797,
+    "wer_basic": 65.48,
+    "wer_basic_ci95": [
+     60.03,
+     72.01
+    ],
+    "cer_basic": 33.3,
+    "cer_basic_ci95": [
+     29.68,
+     37.66
+    ],
+    "n_scored_basic": 797,
+    "wer_norm": 59.26,
+    "wer_norm_ci95": [
+     53.6,
+     65.97
+    ],
+    "cer_norm": 31.46,
+    "cer_norm_ci95": [
+     27.84,
+     35.84
+    ],
+    "n_scored_norm": 797,
+    "seconds": 422.5
+   }
+  },
+  "openai/whisper-large-v3-turbo": {
+   "model": "openai/whisper-large-v3-turbo",
+   "language": "ar",
+   "sdn_test": {
+    "n_utts": 369,
+    "wer_raw": 80.23,
+    "wer_raw_ci95": [
+     70.95,
+     91.36
+    ],
+    "cer_raw": 44.21,
+    "cer_raw_ci95": [
+     35.49,
+     53.97
+    ],
+    "n_scored_raw": 369,
+    "wer_basic": 79.73,
+    "wer_basic_ci95": [
+     70.52,
+     90.93
+    ],
+    "cer_basic": 43.48,
+    "cer_basic_ci95": [
+     34.96,
+     53.05
+    ],
+    "n_scored_basic": 369,
+    "wer_norm": 72.89,
+    "wer_norm_ci95": [
+     62.89,
+     84.68
+    ],
+    "cer_norm": 41.21,
+    "cer_norm_ci95": [
+     32.67,
+     50.9
+    ],
+    "n_scored_norm": 369,
+    "seconds": 89.5
+   },
+   "ookeval": {
+    "n_utts": 797,
+    "wer_raw": 70.12,
+    "wer_raw_ci95": [
+     64.16,
+     77.28
+    ],
+    "cer_raw": 36.61,
+    "cer_raw_ci95": [
+     32.52,
+     41.06
+    ],
+    "n_scored_raw": 797,
+    "wer_basic": 69.72,
+    "wer_basic_ci95": [
+     63.91,
+     76.98
+    ],
+    "cer_basic": 36.29,
+    "cer_basic_ci95": [
+     32.21,
+     40.74
+    ],
+    "n_scored_basic": 797,
+    "wer_norm": 63.23,
+    "wer_norm_ci95": [
+     57.01,
+     70.48
+    ],
+    "cer_norm": 34.38,
+    "cer_norm_ci95": [
+     30.26,
+     38.85
+    ],
+    "n_scored_norm": 797,
+    "seconds": 199.0
+   }
+  },
+  "AymanMansour/Whisper-Sudanese-Dialect-small (2022, external ref)": {
+   "model": "AymanMansour/Whisper-Sudanese-Dialect-small",
+   "language": "ar",
+   "ookeval": {
+    "n_utts": 797,
+    "wer_raw": 67.38,
+    "wer_raw_ci95": [
+     65.93,
+     68.96
+    ],
+    "cer_raw": 27.28,
+    "cer_raw_ci95": [
+     25.93,
+     28.77
+    ],
+    "n_scored_raw": 797,
+    "wer_basic": 67.37,
+    "wer_basic_ci95": [
+     65.91,
+     68.95
+    ],
+    "cer_basic": 27.27,
+    "cer_basic_ci95": [
+     25.92,
+     28.76
+    ],
+    "n_scored_basic": 797,
+    "wer_norm": 56.47,
+    "wer_norm_ci95": [
+     54.8,
+     58.28
+    ],
+    "cer_norm": 24.58,
+    "cer_norm_ci95": [
+     23.19,
+     26.09
+    ],
+    "n_scored_norm": 797,
+    "seconds": 88.9
+   }
+  }
+ }
+}

@@ -1,0 +1,32 @@
+{
+  "title": "sudanese-asr-eval: split, normaliser and scoring for Sudanese Arabic ASR",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "description": "<p>Code, speaker-disjoint split and text-free per-clip scores for the paper \"What Is in a WER? Reproducible Evaluation of Whisper for Sudanese Arabic\" (Saifuddin Ahmed, 2026). Includes an installable Python module and CLI with three text views (raw, Whisper basic, full Arabic normalisation), corpus WER/CER with bootstrap confidence intervals and paired tests, the Kaggle notebooks used for all runs, a script that recomputes every number in the paper, and a check of the arbml/sudanese_dialect_speech mirror alignment.</p><p>The split and scores are derived from the Sudanese dialect speech dataset by Ayman Mansour (Zenodo, doi:10.5281/zenodo.6869079, CC BY 4.0). No audio is included. OOOK-Eval-Final is used for evaluation only and is not redistributed.</p>",
+  "creators": [
+    {
+      "name": "Ahmed, Saifuddin",
+      "affiliation": "Birtal Lab",
+      "orcid": "0009-0007-9719-7258"
+    }
+  ],
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "keywords": [
+    "automatic speech recognition",
+    "Sudanese Arabic",
+    "dialectal Arabic",
+    "Whisper",
+    "evaluation",
+    "text normalisation",
+    "word error rate"
+  ],
+  "language": "eng",
+  "related_identifiers": [
+    {"identifier": "10.5281/zenodo.6869079", "relation": "isDerivedFrom", "resource_type": "dataset", "scheme": "doi"},
+    {"identifier": "arXiv:2601.06802", "relation": "references", "resource_type": "publication-preprint", "scheme": "arxiv"},
+    {"identifier": "arXiv:2212.10826", "relation": "references", "resource_type": "publication-preprint", "scheme": "arxiv"},
+    {"identifier": "https://github.com/birtal-lab/sudanese-asr-eval", "relation": "isSupplementTo", "resource_type": "software", "scheme": "url"}
+  ],
+  "notes": "Code: Apache-2.0. Split files and released scores (splits/, results/): CC BY 4.0, see LICENSE-DATA. The paper's arXiv identifier will be added as an isSupplementTo relation once available."
+}

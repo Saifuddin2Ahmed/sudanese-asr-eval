@@ -1,0 +1,157 @@
+{
+ "env": {
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "transformers": "4.56.2",
+  "cuda": "12.8",
+  "gpu": "Tesla T4",
+  "peft": "0.17.1",
+  "jiwer": "?"
+ },
+ "config": {
+  "name": "lora_whisper_large_v3_turbo",
+  "base_model": "openai/whisper-large-v3-turbo",
+  "mode": "lora",
+  "lora_r": 32,
+  "lora_alpha": 64,
+  "lora_dropout": 0.05,
+  "lora_targets": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "out_proj",
+   "fc1",
+   "fc2"
+  ],
+  "seed": 42,
+  "bootstrap": 1000,
+  "lr": 0.0005,
+  "weight_decay": 0.0,
+  "warmup_steps": 100,
+  "max_steps": 2000,
+  "batch_size": 8,
+  "grad_accum": 2,
+  "eval_every": 200,
+  "patience": 4,
+  "eval_batch_size": 16,
+  "fp16": true,
+  "gradient_checkpointing": true,
+  "spec_augment": false,
+  "save_model": true,
+  "split_tsv": "/kaggle/working/splits/sdn_split_v1.tsv",
+  "cache_dir": "/tmp/cache",
+  "out_dir": "/kaggle/working/outputs"
+ },
+ "selected_step": 1000,
+ "dev": {
+  "n_utts": 302,
+  "wer_raw": 65.39,
+  "wer_raw_ci95": [
+   61.21,
+   70.09
+  ],
+  "cer_raw": 42.44,
+  "cer_raw_ci95": [
+   36.01,
+   50.2
+  ],
+  "n_scored_raw": 302,
+  "wer_basic": 65.39,
+  "wer_basic_ci95": [
+   61.21,
+   70.09
+  ],
+  "cer_basic": 42.44,
+  "cer_basic_ci95": [
+   36.01,
+   50.2
+  ],
+  "n_scored_basic": 302,
+  "wer_norm": 67.03,
+  "wer_norm_ci95": [
+   62.88,
+   72.34
+  ],
+  "cer_norm": 41.92,
+  "cer_norm_ci95": [
+   35.42,
+   49.77
+  ],
+  "n_scored_norm": 302
+ },
+ "train_utts": 2695,
+ "dev_utts": 302,
+ "train_seconds": 24599,
+ "sdn_test": {
+  "n_utts": 369,
+  "wer_raw": 59.91,
+  "wer_raw_ci95": [
+   50.57,
+   71.4
+  ],
+  "cer_raw": 32.04,
+  "cer_raw_ci95": [
+   24.24,
+   42.15
+  ],
+  "n_scored_raw": 369,
+  "wer_basic": 59.83,
+  "wer_basic_ci95": [
+   50.52,
+   71.34
+  ],
+  "cer_basic": 32.01,
+  "cer_basic_ci95": [
+   24.17,
+   42.11
+  ],
+  "n_scored_basic": 369,
+  "wer_norm": 61.68,
+  "wer_norm_ci95": [
+   51.87,
+   74.14
+  ],
+  "cer_norm": 31.53,
+  "cer_norm_ci95": [
+   23.46,
+   41.79
+  ],
+  "n_scored_norm": 369
+ },
+ "ookeval": {
+  "n_utts": 797,
+  "wer_raw": 71.55,
+  "wer_raw_ci95": [
+   66.99,
+   76.7
+  ],
+  "cer_raw": 30.04,
+  "cer_raw_ci95": [
+   26.85,
+   33.34
+  ],
+  "n_scored_raw": 797,
+  "wer_basic": 71.55,
+  "wer_basic_ci95": [
+   66.99,
+   76.7
+  ],
+  "cer_basic": 30.04,
+  "cer_basic_ci95": [
+   26.85,
+   33.34
+  ],
+  "n_scored_basic": 797,
+  "wer_norm": 58.82,
+  "wer_norm_ci95": [
+   54.37,
+   64.11
+  ],
+  "cer_norm": 27.0,
+  "cer_norm_ci95": [
+   23.81,
+   30.3
+  ],
+  "n_scored_norm": 797
+ }
+}
