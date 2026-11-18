@@ -4,7 +4,7 @@ Code, split and scores for the paper **"What Is in a WER? Reproducible Evaluatio
 
 - **Paper:** arXiv link to be added (TBD).
 - **Archive:** Zenodo DOI to be added on the first release.
-- **Repository:** https://github.com/birtal-lab/sudanese-asr-eval
+- **Repository:** https://github.com/Saifuddin2Ahmed/sudanese-asr-eval
 
 The repository contains:
 
@@ -202,7 +202,7 @@ If you use the split, normaliser or scores, please cite the paper and the corpus
   title  = {What Is in a {WER}? Reproducible Evaluation of {W}hisper for {S}udanese {A}rabic},
   year   = {2026},
   note   = {Preprint; arXiv identifier to be added},
-  url    = {https://github.com/birtal-lab/sudanese-asr-eval}
+  url    = {https://github.com/Saifuddin2Ahmed/sudanese-asr-eval}
 }
 
 @dataset{mansour_2022_sdn,

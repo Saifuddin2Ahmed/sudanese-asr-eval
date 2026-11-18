@@ -5,7 +5,7 @@ type: software
 version: 1.0.0
 date-released: 2026-10-23
 license: Apache-2.0
-repository-code: "https://github.com/birtal-lab/sudanese-asr-eval"
+repository-code: "https://github.com/Saifuddin2Ahmed/sudanese-asr-eval"
 authors:
   - family-names: Ahmed
     given-names: Saifuddin

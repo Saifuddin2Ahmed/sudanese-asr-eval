@@ -28,7 +28,7 @@ experiments = [
 sudanese-asr-eval = "sudanese_asr_eval.cli:main"
 
 [project.urls]
-Repository = "https://github.com/birtal-lab/sudanese-asr-eval"
+Repository = "https://github.com/Saifuddin2Ahmed/sudanese-asr-eval"
 
 [tool.setuptools.packages.find]
 where = ["src"]

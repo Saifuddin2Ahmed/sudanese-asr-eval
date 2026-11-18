@@ -26,7 +26,7 @@
     {"identifier": "10.5281/zenodo.6869079", "relation": "isDerivedFrom", "resource_type": "dataset", "scheme": "doi"},
     {"identifier": "arXiv:2601.06802", "relation": "references", "resource_type": "publication-preprint", "scheme": "arxiv"},
     {"identifier": "arXiv:2212.10826", "relation": "references", "resource_type": "publication-preprint", "scheme": "arxiv"},
-    {"identifier": "https://github.com/birtal-lab/sudanese-asr-eval", "relation": "isSupplementTo", "resource_type": "software", "scheme": "url"}
+    {"identifier": "https://github.com/Saifuddin2Ahmed/sudanese-asr-eval", "relation": "isSupplementTo", "resource_type": "software", "scheme": "url"}
   ],
   "notes": "Code: Apache-2.0. Split files and released scores (splits/, results/): CC BY 4.0, see LICENSE-DATA. The paper's arXiv identifier will be added as an isSupplementTo relation once available."
 }
