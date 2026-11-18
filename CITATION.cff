@@ -3,6 +3,7 @@ message: "If you use this software, split or scores, please cite the paper below
 title: "sudanese-asr-eval: split, normaliser and scoring for Sudanese Arabic ASR"
 type: software
 version: 1.0.0
+doi: 10.5281/zenodo.24354752
 date-released: 2026-10-23
 license: Apache-2.0
 repository-code: "https://github.com/Saifuddin2Ahmed/sudanese-asr-eval"
