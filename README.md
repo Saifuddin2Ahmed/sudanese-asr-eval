@@ -2,7 +2,7 @@
 
 Code, split and scores for the paper **"What Is in a WER? Reproducible Evaluation of Whisper for Sudanese Arabic"** (Saifuddin Ahmed, 2026).
 
-- **Paper:** arXiv link to be added (TBD).
+- **Paper:** [doi:10.5281/zenodo.24355118](https://doi.org/10.5281/zenodo.24355118)
 - **Archive:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24354752.svg)](https://doi.org/10.5281/zenodo.24354752)
 - **Repository:** https://github.com/Saifuddin2Ahmed/sudanese-asr-eval
 
